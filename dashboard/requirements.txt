@@ -1,0 +1,4 @@
+streamlit
+azure-cosmos
+azure-identity
+pandas
