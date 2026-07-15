@@ -37,11 +37,11 @@ flowchart LR
 
 **Prerequisites:** Azure subscription with Owner access, Python 3.11+, Azure Functions Core Tools, Azure CLI.
 
-1. **Sentinel workspace** — create a Log Analytics workspace, enable Microsoft Sentinel on it.
-2. **Azure OpenAI** — deploy a `gpt-5-mini` model (or current-generation small model — check the Azure AI Foundry model catalog for what's current, as model availability changes over time).
-3. **Key Vault** — create a vault with RBAC access mode enabled. Store two secrets: `openai-api-key`, `openai-endpoint`.
-4. **Cosmos DB** — create a Serverless NoSQL account, database `TriageDB`, container `Incidents`, partition key `/incident_id`.
-5. **Function App** — Python runtime, Linux, Consumption/Flex plan. Enable System-Assigned Managed Identity.
+1. **Sentinel workspace** - create a Log Analytics workspace, enable Microsoft Sentinel on it.
+2. **Azure OpenAI** - deploys a `gpt-5-mini` model
+3. **Key Vault** - vault with RBAC access mode enabled. Storing 2 secrets: `openai-api-key`, `openai-endpoint`.
+4. **Cosmos DB** - Serverless NoSQL account, database `TriageDB`, container `Incidents`, partition key `/incident_id`.
+5. **Function App** - Python runtime, Linux, Consumption/Flex plan. Enable System-Assigned Managed Identity.
 6. **Grant access:**
    - Key Vault → Access control (IAM) → assign `Key Vault Secrets User` to the Function's Managed Identity
    - Cosmos DB → assign `Cosmos DB Built-in Data Contributor` to the Function's Managed Identity via CLI:
