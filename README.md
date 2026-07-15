@@ -10,9 +10,9 @@ An end-to-end pipeline that pulls security incidents from Microsoft Sentinel, en
 - [Sentinel & Sample Data](#sentinel--sample-data)
 - [Azure OpenAI Integration](#azure-openai-integration)
 - [Identity & Secrets Management](#identity--secrets-management)
-- [Azure Function — Orchestration](#azure-function--orchestration)
-- [Cosmos DB — Storage](#cosmos-db--storage)
-- [Dashboard — Human Review](#dashboard--human-review)
+- [Azure Function - Orchestration](#azure-function--orchestration)
+- [Cosmos DB - Storage](#cosmos-db---storage)
+- [Dashboard - Human Review](#dashboard---human-review)
 - [Output Analysis](#output-analysis)
 - [Conclusion](#conclusion)
 
@@ -118,7 +118,7 @@ Each record pairs the raw Sentinel alert, the AI enrichment, a full decision log
 
 ![Cosmos record](screenshots/12-cosmos-record-example.png)
 
-## Dashboard — Human Review
+## Dashboard - Human Review
 
 A Streamlit dashboard reads directly from Cosmos DB, presenting an organized, filterable incident log with detailed views. Every incident requires an explicit Approve, Reject, or Needs Review decision.
 
