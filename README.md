@@ -17,10 +17,10 @@ An end-to-end pipeline that pulls security incidents from Microsoft Sentinel, en
 - [Conclusion](#conclusion)
 
 ## Overview
+This project uses an LLM to do first-pass triage on security incidents pulled from Microsoft Sentinel. An Azure Function runs every 15 minutes, sends each new incident to Azure OpenAI for structured analysis (severity, MITRE technique, summary, recommended action), and logs the result to Cosmos DB alongside the raw alert and a full decision log.
 
-Security teams deal with high alert volume, inconsistent triage speed, and limited time to investigate incidents. This project explores how an LLM can provide a reliable first-pass triage layer with consistent severity scoring, technique identification, and remediation guidance while keeping a human reviewer in control of every final decision.
+A Streamlit dashboard lets a human review, approve, or reject every incident. This means nothing gets auto-remediated, ensuring that a poor AI call doesn't result in a bad action without someone reviewing it first.
 
-The pipeline runs automatically on a 15-minute schedule, pulls new incidents, and augments them with structured AI output, logging the raw model response and a pass/fail parse status for every attempt.
 
 ## Architecture
 
